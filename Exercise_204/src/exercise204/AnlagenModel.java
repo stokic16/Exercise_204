@@ -1,6 +1,6 @@
 
 
-package src;
+package exercise204;
 
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
