@@ -1,6 +1,6 @@
 
 
-package src;
+package exercise204;
 
 /**
  * @author Kilian Stöckler
