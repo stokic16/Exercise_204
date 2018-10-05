@@ -16,9 +16,7 @@ public class AnlagenModel extends AbstractTableModel {
         this.fireTableRowsInserted(anlagen.size() - 1, anlagen.size() - 1);
     }
     
-    public void calc(String year) {
-        
-    }
+   
     
     @Override
     public int getRowCount() {
@@ -29,8 +27,6 @@ public class AnlagenModel extends AbstractTableModel {
     public String getColumnName(int column) {
        return colNames[column];
     }
-    
-    
     
     @Override
     public int getColumnCount() {
