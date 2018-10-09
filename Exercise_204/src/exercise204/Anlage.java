@@ -33,6 +33,10 @@ public class Anlage {
     public double getNd() {
         return nd;
     }
+
+    public int getValue() {
+        return value;
+    }
     
     
 

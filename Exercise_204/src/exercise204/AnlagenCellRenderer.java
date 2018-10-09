@@ -16,30 +16,47 @@ import javax.swing.table.TableCellRenderer;
  * @author Felix
  */
 public class AnlagenCellRenderer implements TableCellRenderer {
-
+    
     @Override
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
         JLabel label = new JLabel();
         Anlage anlage = (Anlage) value;
-        double[] values= anlage.getValues();
+        double[] values = anlage.getValues();
         
-        if(values[3]==0){
+        if (values[3] == 0) {
             label.setBackground(Color.red);
         }
-        switch(column){
-            case 1: label.setText(anlage.getName());break;
-            case 2: label.setText(anlage.getValue());break;
-            case 3: label.setText(anlage.getYear());break;
-            case 4: label.setText(anlage.getNd());break;
-            case 5: label.setText(""+values[0]);break;
-            case 6: label.setText(""+values[2]);break;
-            case 7: label.setText(""+values[3]);break;
-            case 8: label.setText(""+values[1]);break;
-            case 9: label.setText(""+values[4]);break;
+        switch (column) {
+            case 1:
+                label.setText(anlage.getName());
+                break;
+            case 2:
+                label.setText(String.valueOf(anlage.getValue()));
+                break;
+            case 3:
+                label.setText(String.valueOf(anlage.getYear()));
+                break;
+            case 4:
+                label.setText(String.valueOf(anlage.getNd()));
+                break;
+            case 5:
+                label.setText("" + values[0]);
+                break;
+            case 6:
+                label.setText("" + values[2]);
+                break;
+            case 7:
+                label.setText("" + values[3]);
+                break;
+            case 8:
+                label.setText("" + values[1]);
+                break;
+            case 9:
+                label.setText("" + values[4]);
+                break;
         }
-        
         
         return label;
     }
-
+    
 }
