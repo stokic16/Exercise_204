@@ -5,6 +5,10 @@
  */
 package exercise204;
 
+import java.io.File;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Felix
@@ -19,8 +23,14 @@ public class AnlagenverzeichnisGUI extends javax.swing.JFrame {
     public AnlagenverzeichnisGUI() {
         initComponents();
         
-        for(int i = 0; i <= 8;i++){
-            cBYear.addItem(String.valueOf(2010 + i));
+        try {
+            this.model.load(new File("../anlagenverzeichnis.csv"));
+        } catch (Exception ex) {
+           ex.printStackTrace();
+        }
+        
+        for(int i = 2010; i <= 2018;i++){
+            cBYear.addItem(String.valueOf(i));
         }
         
         tbAnlagen.setModel(model);
