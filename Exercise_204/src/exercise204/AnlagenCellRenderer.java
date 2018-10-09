@@ -20,12 +20,14 @@ public class AnlagenCellRenderer implements TableCellRenderer {
     @Override
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
         JLabel label = new JLabel();
+        label.setOpaque(true);
         Anlage anlage = (Anlage) value;
 
         double[] values = anlage.getValues();
 
         if (values != null) {
-            if (values[3] == 0) {
+
+            if(values[0]<0||values[4]<0){
                 label.setBackground(Color.red);
             }
 
