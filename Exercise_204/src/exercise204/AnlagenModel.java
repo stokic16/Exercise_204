@@ -33,7 +33,9 @@ public class AnlagenModel extends AbstractTableModel {
         br.readLine();
         while ((input = br.readLine()) != null) {
             String values[] = input.split(";");
-            this.add(new Anlage(values[0], values[1], values[2], Integer.parseInt(values[3])));
+            this.add(new Anlage(values[0], Integer.parseInt(values[1].replace(".", "")),
+                    Double.parseDouble(values[2].replace(",", ".")),
+                    Double.parseDouble(values[3].replace(",", "."))));
         }
         br.close();
     }

@@ -6,12 +6,12 @@ package exercise204;
 public class Anlage {
 
     private final String name;
-    private final String year;
-    private final String value;
-    private final int nd;
+    private final double year;
+    private final int value;
+    private final double nd;
     private double[] values;
 
-    public Anlage(String name, String year, String value, int nd) {
+    public Anlage(String name, int value, double year, double nd) {
         this.name = name;
         this.year = year;
         this.value = value;
@@ -19,9 +19,7 @@ public class Anlage {
     }
 
     public void calc(int year) {
-        double init = Double.parseDouble(this.year);
-        double value = Double.parseDouble(this.value);
-        values[0] = init - year;
+        values[0] = this.year - year;
         values[1] = value / nd;
         values[2] = values[1] * values[0];
         values[3] = value - values[2];
@@ -32,15 +30,17 @@ public class Anlage {
         return values;
     }
 
+    public double getNd() {
+        return nd;
+    }
+    
+    
+
     public String getName() {
         return name;
     }
 
-    public String getValue() {
-        return value;
-    }
-
-    public String getYear() {
+    public double getYear() {
         return year;
     }
 

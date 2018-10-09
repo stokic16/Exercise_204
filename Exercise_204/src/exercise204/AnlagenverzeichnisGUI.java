@@ -23,6 +23,8 @@ public class AnlagenverzeichnisGUI extends javax.swing.JFrame {
     public AnlagenverzeichnisGUI() {
         initComponents();
         
+      
+        
         try {
             this.model.load(new File("../anlagenverzeichnis.csv"));
         } catch (Exception ex) {
