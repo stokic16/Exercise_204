@@ -16,7 +16,11 @@ public class AnlagenModel extends AbstractTableModel {
         this.fireTableRowsInserted(anlagen.size() - 1, anlagen.size() - 1);
     }
     
-   
+    public void calc(int year){
+        for(Anlage a : anlagen){
+            a.calc(year);
+        }
+    }
     
     @Override
     public int getRowCount() {

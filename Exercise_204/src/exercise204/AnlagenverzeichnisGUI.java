@@ -10,7 +10,7 @@ package exercise204;
  * @author Felix
  */
 public class AnlagenverzeichnisGUI extends javax.swing.JFrame {
-
+    
     private AnlagenModel model = new AnlagenModel();
 
     /**
@@ -18,11 +18,14 @@ public class AnlagenverzeichnisGUI extends javax.swing.JFrame {
      */
     public AnlagenverzeichnisGUI() {
         initComponents();
-
+        
+        for(int i = 0; i <= 8;i++){
+            cBYear.addItem(String.valueOf(2010 + i));
+        }
+        
         tbAnlagen.setModel(model);
     }
-
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -85,7 +88,7 @@ public class AnlagenverzeichnisGUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btUpdateTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btUpdateTableActionPerformed
-        // TODO add your handling code here:
+        this.model.calc(Integer.parseInt((String) this.cBYear.getSelectedItem()));
     }//GEN-LAST:event_btUpdateTableActionPerformed
 
     /**
