@@ -1,5 +1,8 @@
 package exercise204;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 
@@ -22,6 +25,17 @@ public class AnlagenModel extends AbstractTableModel {
         }
         
         this.fireTableRowsUpdated(0, this.anlagen.size() - 1);
+    }
+    
+    public void load(File f) throws Exception{
+        BufferedReader br = new BufferedReader(new FileReader(f));
+        String input;
+        br.readLine();
+        while((input = br.readLine())!=null){
+            String values[] = input.split(";");
+            this.add(new Anlage(values[0],values[1],values[2],Integer.parseInt(values[3])));
+        }
+        br.close();
     }
     
     @Override
