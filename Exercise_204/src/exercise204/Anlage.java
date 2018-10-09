@@ -9,7 +9,7 @@ public class Anlage {
     private final double year;
     private final int value;
     private final double nd;
-    private double[] values;
+    private double[] values = new double[5];
 
     public Anlage(String name, int value, double year, double nd) {
         this.name = name;
@@ -19,7 +19,7 @@ public class Anlage {
     }
 
     public void calc(int year) {
-        values[0] = this.year - year;
+        values[0] = year - this.year;
         values[1] = value / nd;
         values[2] = values[1] * values[0];
         values[3] = value - values[2];

@@ -17,12 +17,14 @@ public class AnlagenverzeichnisGUI extends javax.swing.JFrame {
     
     private AnlagenModel model = new AnlagenModel();
 
+
     /**
      * Creates new form AnlagenverzeichnisGUI
      */
     public AnlagenverzeichnisGUI() {
         initComponents();
         
+        this.tbAnlagen.setDefaultRenderer(Object.class, new AnlagenCellRenderer());
       
         
         try {
