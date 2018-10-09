@@ -26,25 +26,25 @@ public class AnlagenCellRenderer implements TableCellRenderer {
         double[] values = anlage.getValues();
         if (values != null) {
 
-            if(values[0]<0||values[4]<0){
+            if(values[4]<=0&&values[0]==-1){
                 label.setBackground(Color.red);
             }
 
             switch (column) {
                 case 4:
-                    label.setText("" + values[0]);
+                    label.setText(String.format("%.2f", values[0]));
                     break;
                 case 5:
-                    label.setText("" + values[2]);
+                    label.setText(String.format("%.2f", values[2]));
                     break;
                 case 6:
-                    label.setText("" + values[3]);
+                    label.setText(String.format("%.2f", values[3]));
                     break;
                 case 7:
-                    label.setText("" + values[1]);
+                    label.setText(String.format("%.2f", values[1]));
                     break;
                 case 8:
-                    label.setText("" + values[4]);
+                    label.setText(String.format("%.2f", values[4]));
                     break;
             }
         }

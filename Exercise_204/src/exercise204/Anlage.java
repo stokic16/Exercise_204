@@ -19,11 +19,19 @@ public class Anlage {
     }
 
     public void calc(int year) {
-        values[0] = year - this.year;
-        values[1] = value / nd;
-        values[2] = values[1] * values[0];
-        values[3] = value - values[2];
-        values[4] = values[3] - values[1];
+        if(this.year>year){
+            values[0]=-1;
+        }else{
+            values[0] = year - this.year;
+            values[1] = value / nd;
+            values[2] = values[1] * values[0];
+            values[3] = value - values[2];
+            values[4] = values[3] - values[1];
+        }
+        if(values[4]<=0){
+            values= new double[5];
+            values[0]=-1;
+        }
     }
 
     public double[] getValues() {
