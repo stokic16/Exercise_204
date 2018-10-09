@@ -24,7 +24,6 @@ public class AnlagenCellRenderer implements TableCellRenderer {
         Anlage anlage = (Anlage) value;
 
         double[] values = anlage.getValues();
-
         if (values != null) {
 
             if(values[0]<0||values[4]<0){
