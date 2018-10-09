@@ -20,6 +20,8 @@ public class AnlagenModel extends AbstractTableModel {
         for(Anlage a : anlagen){
             a.calc(year);
         }
+        
+        this.fireTableRowsUpdated(0, this.anlagen.size() - 1);
     }
     
     @Override
